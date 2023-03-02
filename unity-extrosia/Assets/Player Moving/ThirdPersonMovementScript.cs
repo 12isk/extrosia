@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ThirdPersonMovementScript : MonoBehaviour
 {
@@ -11,14 +13,17 @@ public class ThirdPersonMovementScript : MonoBehaviour
     public float speed= 6f;
     public float turnSmoothTime = 0.1f;
     
-    //jumping mechanics
-    public float jumpHeight = 8f;
-    private bool isFalling = false;
-    public Rigidbody rb;
+    
     
     //smoothing 
     private float smoothVelocity;
     // Update is called once per frame
+
+
+   //input stuff
+   
+   
+
     void Update()
     {
         // getting our input
@@ -43,10 +48,6 @@ public class ThirdPersonMovementScript : MonoBehaviour
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown("jump"))
-        {
-            var rbVelocity = rb.velocity;
-            rbVelocity.y = jumpHeight;
-        }
+        
     }
 }
