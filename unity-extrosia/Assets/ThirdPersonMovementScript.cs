@@ -10,7 +10,13 @@ public class ThirdPersonMovementScript : MonoBehaviour
     public CharacterController controller;
     public float speed= 6f;
     public float turnSmoothTime = 0.1f;
-
+    
+    //jumping mechanics
+    public float jumpHeight = 8f;
+    private bool isFalling = false;
+    public Rigidbody rb;
+    
+    //smoothing 
     private float smoothVelocity;
     // Update is called once per frame
     void Update()
@@ -35,6 +41,12 @@ public class ThirdPersonMovementScript : MonoBehaviour
             // Creating a new moving direction while taking into account the cam mvmt
             Vector3 moveDir = Quaternion.Euler(0f,targetAngle,0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown("jump"))
+        {
+            var rbVelocity = rb.velocity;
+            rbVelocity.y = jumpHeight;
         }
     }
 }
