@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iskei\\Projs2\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj": {}
+    "C:\\Users\\gabri\\TP EPITA PROG\\PROJET\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iskei\\Projs2\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj": {
+    "C:\\Users\\gabri\\TP EPITA PROG\\PROJET\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iskei\\Projs2\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj",
+        "projectUniqueName": "C:\\Users\\gabri\\TP EPITA PROG\\PROJET\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj",
         "projectName": "Extrosia",
-        "projectPath": "C:\\Users\\iskei\\Projs2\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj",
-        "packagesPath": "C:\\Users\\iskei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iskei\\Projs2\\extrosia\\code\\Extrosia\\Extrosia\\obj\\",
+        "projectPath": "C:\\Users\\gabri\\TP EPITA PROG\\PROJET\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj",
+        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gabri\\TP EPITA PROG\\PROJET\\extrosia\\code\\Extrosia\\Extrosia\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\iskei\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -5,13 +5,13 @@ using UnityEngine;
 public class Jumping : MonoBehaviour{
 
 //jumping mechanics
-    [SerializeField] public float jumpHeight = 8f;
-    private bool isFalling = false;
+    [SerializeField] public float jumpHeight = 2f;
+    private bool isFalling;
     public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+       isFalling = false; 
     }
 
     // Update is called once per frame
