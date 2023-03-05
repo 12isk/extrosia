@@ -11,10 +11,12 @@ public class ThirdPersonMovementScript : MonoBehaviour
     
     public CharacterController controller;
     public float speed= 6f;
-    public float turnSmoothTime = 0.1f;
+    public float turnSmoothTime = 0.25f;
     
     private Rigidbody rb;
-    public float rotationSpeed = 1f;
+    // public float rotationSpeed = 1f;
+    // public float stabilization;
+    // public float damping;
     
     //smoothing 
     private float smoothVelocity;
@@ -27,6 +29,17 @@ public class ThirdPersonMovementScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
    
+//    void FixedUpdate()
+//    {
+//        // // Calculate the rotation the object should have to be upright
+//        // Quaternion targetRotation = Quaternion.FromToRotation(transform.up, Vector3.up) * transform.rotation;
+//        //
+//        // // Smoothly rotate the object towards the target rotation
+//        // rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, Time.fixedDeltaTime * rotationSpeed));
+
+//        Vector3 torque = stabilization * Vector3.Cross(transform.up, Vector3.up) - damping * rb.angularVelocity;
+//        rb.AddTorque(torque.normalized);
+//    }
 
     void Update()
     {
@@ -57,12 +70,5 @@ public class ThirdPersonMovementScript : MonoBehaviour
         
     }
     
-    void FixedUpdate()
-    {
-        // Calculate the rotation the object should have to be upright
-        Quaternion targetRotation = Quaternion.FromToRotation(transform.up, Vector3.up) * transform.rotation;
-
-        // Smoothly rotate the object towards the target rotation
-     rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, Time.fixedDeltaTime * rotationSpeed));
-    }
+    
 }
