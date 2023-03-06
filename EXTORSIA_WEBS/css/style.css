@@ -1,0 +1,261 @@
+    /* 
+Page de style pour le premier site en html/css.
+
+*/
+
+ 
+html{ 
+    font-size: 20px; /* taille de référence des fontes */
+}
+
+body{
+    background-color: #EFEFEF   ;
+    background-size: 100%;
+    width: 85%; /* occupe 70% de la page en largeur */
+    margin: 0 auto; /* auto permet ici de centrer le body en laissant marge gauche et marge droite identiques */
+    margin-top: 20px;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid grey;
+    background-color: #986990;
+
+
+}
+nav .logo{
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-right: 100px;
+}
+nav .onglet a{
+    text-decoration: none;
+    color : black;
+    margin-right: 10px;
+    border-bottom: 1px solid black;
+
+}
+
+div#origines{
+    background-color: lightgrey;
+}
+
+div#origines div{
+    margin: 10px;
+}
+
+
+div#membres {
+    background-color: lightgrey;
+    width: 21%;
+}
+
+div#membres h1{
+    margin: 10px;
+    margin-bottom: 0px;
+}
+div#idk {
+    margin-top: 20px;
+}
+
+div#idk div.idk1{
+    background-color: lightgrey;
+    margin-top: -8px;
+    margin-bottom: 20px;
+}
+
+div#content div{
+    margin-top: 30px;
+    display: inline-block;
+    width: 49.67%;
+}
+
+div#content div.rightbox{
+    background-color: lightgrey;
+    vertical-align: top;
+}
+
+div#content div.leftbox{
+    background-color: lightgrey;
+    vertical-align: top;
+}
+
+div#content div.leftbox p{
+    margin:10px;
+}
+
+div#content div.rightbox p{
+    margin:10px;
+}
+
+div#content div.rightbox{
+    background-color: lightgrey;
+    vertical-align: top;
+}
+
+div#content div.l{
+    vertical-align: top;
+    width: 49.67%;
+}
+
+div#content div.l h2{
+    background-color: lightgrey;
+    width: 50%;
+}
+
+div#content div.r h2{
+    background-color: lightgrey;
+    width: 50%;
+}
+
+div#content div.r a{
+    text-decoration: none;
+    color: black;
+}
+
+div#content div.l a{
+    text-decoration: none;
+    color: black;
+}
+
+
+div#content div.r p{
+    margin:10px;
+}
+
+div#content div.r p{
+    margin:10px;
+}
+
+div#ordre {
+    background-color: lightgrey;
+    width: 22%;
+    margin-top: -27px;
+}
+
+div#ordre p{
+    margin-left: 5px;
+}
+div#toutmembres {
+    margin-top: -20px;
+    }
+
+div#content2 div{
+    margin-top: 5px;
+    display: inline-block;
+    width: 49.67%;
+}
+
+div#content2 div.rightbox{
+    background-color: lightgrey;
+    vertical-align: top;
+}
+
+div#content2 div.leftbox{
+    background-color: lightgrey;
+    vertical-align: top;
+}
+
+div#content2 div.leftbox p{
+    margin:10px;
+}
+
+div#content2 div.rightbox p{
+    margin:10px;
+}
+
+div#studio{
+    background-color: lightgrey;
+}
+
+div#studio div{
+    margin: 10px;
+}
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: url('/Users/alex/Documents/EXTORSIA_WEBS/image/banniere1.jpg');
+    background-size: cover;
+    padding: 40px;
+}
+
+header h2{
+    margin-top: -1px;
+    text-shadow:0 0 3px white
+}
+
+header button{
+    margin-top: 40px ;
+    padding : 15px 30px;
+
+}
+
+div#download button{
+    margin-top: 40px ;
+    padding : 30px 90px;   
+}
+
+footer{
+    margin: -9%;   
+    margin-top: 40px;
+    border-top: 5px solid grey;
+    background-color: #F7B0CF;
+    padding : 30px 100px;
+}
+
+footer h1{
+    font-family: 'Playfair Display' ;
+    border-bottom: 1px solid grey;
+    width: 40%;
+    padding-bottom: 3px;
+}
+
+footer .contact{
+    margin-top: -10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .contact .contact1{
+    margin-top: 5px;
+    margin-left: 465px;
+    margin-right: 1%;
+
+}
+
+footer .contact .contact2 .contact3{
+    margin-top: -11px;
+}
+
+ 
+footer .services{
+    margin-top: -10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .services .pservice1{
+    margin-left: 300px;
+    margin-right: 5%;
+
+}
+
+footer .services .pservice{
+    margin-right: 5%;
+}
+
+    
+h2.encadrer{
+    font-size: 1.5rem;
+    border: 1px solid #aaa;
+    text-align:center;
+    border-radius: 20px;
+}
+
+
