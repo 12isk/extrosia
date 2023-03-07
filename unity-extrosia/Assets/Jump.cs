@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,8 @@ public class Jump : MonoBehaviour
     public Rigidbody rb;
     public float jumpForce = 500;
     public float jumpHeight;
-    
+    public float speed = 6f;
+    public float fallMultiplier = 2.5f;
     private bool canJump;
     
     // Start is called before the first frame update
@@ -21,10 +23,33 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) & canJump)
+        //transform.Translate(Vector3.right * (Input.GetAxis("Horizontal") * speed));
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {   
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            canJump=false;
         }
+    }
+
+    public void FixedUpdate()
+    {
+        if (rb.velocity.y < 0)
+        {
+            if (rb.velocity.y < 0)
+            {
+                rb.velocity += Vector3.up * (Physics.gravity.y * fallMultiplier * Time.deltaTime);
+            }
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        canJump = true;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        canJump = false;
     }
 
     float CalculateJumpForce(float mass, float height)
