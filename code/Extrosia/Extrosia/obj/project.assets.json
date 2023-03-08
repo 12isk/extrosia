@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\gabri\\.nuget\\packages\\": {}
+    "/Users/alex/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabri\\TP EPITA PROG\\PROJET\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj",
+      "projectUniqueName": "/Users/alex/Documents/GitHub/extrosia/code/Extrosia/Extrosia/Extrosia.csproj",
       "projectName": "Extrosia",
-      "projectPath": "C:\\Users\\gabri\\TP EPITA PROG\\PROJET\\extrosia\\code\\Extrosia\\Extrosia\\Extrosia.csproj",
-      "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gabri\\TP EPITA PROG\\PROJET\\extrosia\\code\\Extrosia\\Extrosia\\obj\\",
+      "projectPath": "/Users/alex/Documents/GitHub/extrosia/code/Extrosia/Extrosia/Extrosia.csproj",
+      "packagesPath": "/Users/alex/.nuget/packages/",
+      "outputPath": "/Users/alex/Documents/GitHub/extrosia/code/Extrosia/Extrosia/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/alex/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }
