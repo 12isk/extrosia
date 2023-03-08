@@ -12,8 +12,11 @@ public class ThirdPersonMovementScript : MonoBehaviour
     public CharacterController controller;
     public float speed= 6f;
     public float turnSmoothTime = 0.25f;
-    
+    float velocity;
+
     private Rigidbody rb;
+
+    private Animator _animator;
     // public float rotationSpeed = 1f;
     // public float stabilization;
     // public float damping;
@@ -27,6 +30,8 @@ public class ThirdPersonMovementScript : MonoBehaviour
    void Start()
     {
         rb = GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
+
     }
    
 //    void FixedUpdate()
@@ -43,11 +48,16 @@ public class ThirdPersonMovementScript : MonoBehaviour
 
     void Update()
     {
+
+        
         // getting our input
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         // a Vector containing the direction of the movement
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        
+        
+        velocity = (Vector3.forward * (speed * (vertical + horizontal))).magnitude; 
         
         // didnt really get this part, will understand later 
         // todo: explain this in more detail
@@ -60,12 +70,19 @@ public class ThirdPersonMovementScript : MonoBehaviour
             
             //the actual movement
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            
             // Creating a new moving direction while taking into account the cam mvmt
             Vector3 moveDir = Quaternion.Euler(0f,targetAngle,0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            
+            
+            
+            //transition for the animator
+
+            controller.Move(moveDir.normalized * (speed * Time.deltaTime));
         }
         
         
+        _animator.SetFloat("Speed", velocity);
 
 
         
