@@ -16,6 +16,8 @@ body{
     margin-top: 20px;
 }
 
+
+
 nav{
     display: flex;
     flex-wrap: wrap;
@@ -39,6 +41,7 @@ nav .onglet a{
 
 }
 
+}
 div#origines{
     background-color: lightgrey;
 }

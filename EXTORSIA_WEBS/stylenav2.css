@@ -1,0 +1,87 @@
+CSS   
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid grey;
+    background-color: #986990;
+
+
+}
+nav .logo{
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-right: 100px;
+}
+nav .onglet a{
+    text-decoration: none;
+    color : black;
+    margin-right: 10px;
+    border-bottom: 1px solid black;
+
+}
+
+HTML    
+<nav>
+        <div class="logo">
+            <img src="image/logextr2.png" width="100px">
+        </div>
+        <div class="onglet">
+            <a href="#">HOME</a>
+            <a href="TEAMETSTUDIO.html" target="_BLANK">TEAM & STUDIO</a>
+            <a href="jeu.html" target="_BLANK">JEU</a>
+            <a href="DOWNLOAD.html" target="_BLANK">DOWNLOAD</a>
+
+        </div>
+
+
+    </nav>
+
+<nav class="menu-nav">
+        <ul>
+            <li class="btn">
+                
+                    <a href="#"> 
+                        <img src="image/logextr2.png" width="100px">
+                    </a>
+                
+            </li>
+            <li class="btn">
+                <a href="#">HOME</a>
+            </li>
+            <li class="btn">
+                <a href="TEAMETSTUDIO.html" target="_BLANK">TEAM & STUDIO</a>
+            </li >
+            <li class="btn">
+                <a href="jeu.html" target="_BLANK">JEU</a>
+            </li>
+            <li class="btn">
+                <a href="DOWNLOAD.html" target="_BLANK">DOWNLOAD</a>
+            </li>
+
+        </div>
+
+
+    </nav>
+
+nav.menu-nav ul li.btn{
+    list-style-type: none ;
+    display: inline-block;
+    align-items: center;
+
+}
+
+nav.menu-nav ul li.btn a{
+    color: black;
+    background-color: none;
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 10px;
+
+
+}
+
+nav.menu-nav ul li.btn:hover a{
+    background-color: white;
+}
