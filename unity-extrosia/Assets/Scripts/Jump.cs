@@ -85,7 +85,7 @@ public class Jump : MonoBehaviour
             isGrounded = false;
             animator.SetBool("isFalling",true);
         }
-        
+        // TODO: USE RAYS   
         
     }
 
