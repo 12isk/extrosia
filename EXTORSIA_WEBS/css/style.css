@@ -41,7 +41,7 @@ nav .onglet a{
 
 }
 
-}
+
 div#origines{
     background-color: lightgrey;
 }
@@ -52,7 +52,7 @@ div#origines div{
 
 
 div#membres {
-    background-color: lightgrey;
+    background-color: rgb(207, 13, 13);
     width: 21%;
 }
 

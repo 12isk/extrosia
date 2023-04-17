@@ -31,6 +31,8 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(rb.velocity.y);
+        Debug.Log(_canJump);
 
         // Je save le last grounded time pour gerer les appuis desynchronises
         
@@ -70,32 +72,34 @@ public class Jump : MonoBehaviour
         }
         else
         {
-            animator.SetBool("isGrounded", false);
             isGrounded = false;
-            if ((isJumping && rb.velocity.y < 0) || rb.velocity.y < -1)
+            animator.SetBool("isGrounded", false);
+            yVelocity = rb.velocity.y;
+            if ((isJumping && yVelocity < 0) || yVelocity < -1 || !_canJump)
             {
+                animator.SetBool("isJumping",false);
+                isJumping = false;
                 animator.SetBool("isFalling",true);
             }
             
             
         }
-        if ((isJumping && rb.velocity.y < 0) || rb.velocity.y < -1)
-        {
-            animator.SetBool("isGrounded", false);
-            isGrounded = false;
-            animator.SetBool("isFalling",true);
-        }
-        // TODO: USE RAYS   
+        yVelocity = rb.velocity.y;
+
+        
         
     }
 
     public void FixedUpdate()
     {
-        if (rb.velocity.y < 0)
+        if (!_canJump)
         {
-            if (rb.velocity.y < 0)
+            if (rb.velocity.y < 0.1)
             {
                 rb.velocity += Vector3.up * (Physics.gravity.y * fallMultiplier * Time.deltaTime);
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isFalling", true);
+                isJumping = false;
                 isFalling = true;
             }
         }
