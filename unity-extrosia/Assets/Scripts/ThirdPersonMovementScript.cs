@@ -1,3 +1,4 @@
+// ReSharper disable RedundantUsingDirective
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -61,7 +62,7 @@ public class ThirdPersonMovementScript : MonoBehaviour
         
         // didnt really get this part, will understand later 
         // todo: explain this in more detail
-        if (direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f | rb.velocity.y > 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z)*Mathf.Rad2Deg + cam.eulerAngles.y;
             // smoothing out the the turning angle so the movement isnt snappy
