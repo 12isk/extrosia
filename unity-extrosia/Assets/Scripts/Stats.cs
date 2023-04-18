@@ -57,12 +57,7 @@ public class Stats : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && canAttack)
         {
             
-            ManaAttack(5);
-        }
-        if (Input.GetButtonDown("Fire2") && canAttack)
-        {
-            
-            ManaAttack(12);
+            ManaAttack(20);
         }
             
     }

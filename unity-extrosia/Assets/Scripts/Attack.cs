@@ -8,9 +8,7 @@ public class Attack : MonoBehaviour
 
     private Vector3 destination;
     
-    public GameObject lowAtt;
-    public GameObject HiAtt;
-
+    public GameObject projectile;
     public float projSpeed = 30f;
     public float fireRate = 4f;
     private float timeToFire;
@@ -29,16 +27,11 @@ public class Attack : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.time >= timeToFire)
         {
             timeToFire = Time.time + 1 / fireRate;
-            ShootProjectile(1);
-        }
-        if (Input.GetButtonDown("Fire2") && Time.time >= timeToFire)
-        {
-            timeToFire = Time.time + 1 / fireRate;
-            ShootProjectile(2);
+            ShootProjectile();
         }
     }
 
-    private void ShootProjectile(int choice)
+    private void ShootProjectile()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         
@@ -53,31 +46,18 @@ public class Attack : MonoBehaviour
             destination = ray.GetPoint(100);
         }
 
-        InstantiateProjectile(firepoint,choice);
+        InstantiateProjectile(firepoint);
         
     }
 
     // Update is called once per frame
-    void InstantiateProjectile(Transform firepoint, int choice)
+    void InstantiateProjectile(Transform firepoint)
     {
-        if (choice == 1)
-        {
-            var hiAttObj = Instantiate(lowAtt, firepoint.position, Quaternion.identity) as GameObject;
-            hiAttObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projSpeed;
-            iTween.PunchPosition(hiAttObj,
-                new Vector3(Random.Range(-arcRange, arcRange), Random.Range(-arcRange, arcRange), 0),
-                Random.Range(0.5f,2f));
-        }
-
-        else
-        {
-            var hiAttObj = Instantiate(HiAtt, firepoint.position, Quaternion.identity) as GameObject;
-            hiAttObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projSpeed;
-            iTween.PunchPosition(hiAttObj,
-                new Vector3(Random.Range(-arcRange, arcRange), Random.Range(-arcRange, arcRange), 0),
-                Random.Range(0.5f,2f));
-        }
-        
+        var projectileObj = Instantiate(projectile, firepoint.position, Quaternion.identity) as GameObject;
+        projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projSpeed;
+        iTween.PunchPosition(projectileObj,
+            new Vector3(Random.Range(-arcRange, arcRange), Random.Range(-arcRange, arcRange), 0),
+            Random.Range(0.5f,2f));
     }
 
 } 
