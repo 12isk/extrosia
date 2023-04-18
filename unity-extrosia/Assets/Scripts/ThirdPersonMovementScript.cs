@@ -12,12 +12,13 @@ public class ThirdPersonMovementScript : MonoBehaviour
     public CharacterController controller;
     public float speed= 6f;
     public float turnSmoothTime = 0.25f;
+    
     float velocity;
 
     private Rigidbody rb;
 
     private Animator _animator;
-    // public float rotationSpeed = 1f;
+     public float rotationSpeed = 180f;
     // public float stabilization;
     // public float damping;
     
@@ -88,6 +89,25 @@ public class ThirdPersonMovementScript : MonoBehaviour
         
         
     }
+
+
+
+
+    //void Update()
+    //{
+    //    if (Input.GetKey(KeyCode.UpArrow))
+    //    {
+    //        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+    //    
+    //    }
+    //
+    //    if (Input.GetKey(KeyCode.DownArrow))
+    //    {
+    //        transform.Translate(Vector3.back * Time.deltaTime * speed);
+    //    }
+    //
+    //    transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * rotationSpeed);
+    //}
     
     
 }
