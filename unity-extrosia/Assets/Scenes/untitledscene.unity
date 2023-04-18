@@ -2262,7 +2262,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507035471}
-  m_LocalRotation: {x: 0.15087743, y: -0.00000001700941, z: 0.0000000025960547, w: 0.9885525}
+  m_LocalRotation: {x: 0.15087743, y: -0.000000017009407, z: 0.000000002596054, w: 0.9885525}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3086,7 +3086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1795321109}
-  projectile: {fileID: 7764351329508152084, guid: ad341132a38547a4a907ebec79d8e4a3, type: 3}
+  lowAtt: {fileID: 7764351329508152084, guid: ad341132a38547a4a907ebec79d8e4a3, type: 3}
+  HiAtt: {fileID: 100000, guid: d09d9abb35c243242a1f4f91f8b99cd5, type: 3}
   projSpeed: 30
   fireRate: 4
   arcRange: 1
