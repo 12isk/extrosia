@@ -268,7 +268,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!143 &2052955611660904149
 CharacterController:
@@ -356,6 +356,8 @@ MonoBehaviour:
   maxMana: 120
   currentHealth: 0
   currentMana: 0
+  currentFinalObjects: 0
+  hasAllItems: 0
   healthBar: {fileID: 0}
   manaBar: {fileID: 0}
   canAttack: 0
@@ -373,11 +375,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  projectile: {fileID: 7764351329508152084, guid: ad341132a38547a4a907ebec79d8e4a3, type: 3}
+  projectile1: {fileID: 0}
+  projectile2: {fileID: 0}
   projSpeed: 30
   fireRate: 4
   arcRange: 1
   firepoint: {fileID: 6314955286785036138}
+  launchTime: 0
   rb: {fileID: 0}
 --- !u!114 &1315484314051512933
 MonoBehaviour:

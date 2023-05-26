@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,10 @@ public class Stats : MonoBehaviour
     
     public int currentHealth;
     public int currentMana;
+    public int currentFinalObjects;
 
+    public bool hasAllItems;
+    
     public HealthBar healthBar;
 
     public ManaBar manaBar;
@@ -48,9 +52,14 @@ public class Stats : MonoBehaviour
         //     TakeDamage(20);
         // }
 
-        
+        hasAllItems = currentFinalObjects >= 3;
         canAttack = currentMana >= 0;
-        
+
+        if (hasAllItems)
+        {
+            //todo: add win thing here
+            Debug.Log("You have all the items");
+        }
 
         //todo: add mana reducing stuff
 
@@ -63,6 +72,22 @@ public class Stats : MonoBehaviour
         {
             ManaAttack(20);
         }
-            
+
+    }
+    
+    public void ExpandManaLimit(int amount)
+    {
+        maxMana += amount*2;
+        manaBar.SetMaxMana(maxMana);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("QuestObject"))
+        {
+            currentFinalObjects += 1;
+            Destroy(collision.gameObject);
+        }
+        
     }
 }

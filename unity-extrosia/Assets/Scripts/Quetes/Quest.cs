@@ -7,11 +7,11 @@ public class Quest : MonoBehaviour
 {
     public bool isActive;
     
-    public string title;
-    public string description;
-    public int experienceReward;
-    public int goldReward;
-    public int questID;
+    [SerializeField] public string title;
+    [SerializeField] public string description;
+    [SerializeField] public int experienceReward;
+    [SerializeField] public int goldReward;
+    [SerializeField] public int questID;
 
     
 }

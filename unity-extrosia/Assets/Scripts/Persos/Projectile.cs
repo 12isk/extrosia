@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
 {
     public GameObject impactVFX;
     public bool collided;
+    public float launchTime;
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     { 
@@ -18,6 +19,18 @@ public class Projectile : MonoBehaviour
             
             Destroy(impact, 2);
             Destroy(gameObject);
+        }
+    }
+
+    public void Start()
+    { 
+        launchTime = Time.time;
+    }
+    public void Update()
+    {
+        if (Time.deltaTime - launchTime >= 25f)
+        {
+            Destroy(this);
         }
     }
 }

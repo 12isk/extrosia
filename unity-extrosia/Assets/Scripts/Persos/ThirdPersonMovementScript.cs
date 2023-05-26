@@ -24,6 +24,12 @@ public class ThirdPersonMovementScript : MonoBehaviour
     
     //smoothing 
     private float smoothVelocity;
+
+    private static readonly int Speed = Animator.StringToHash("Speed");
+    private static readonly int isRunning = Animator.StringToHash("isRunning");
+    private static readonly int Dodge = Animator.StringToHash("Dodge");
+
+
     // Update is called once per frame
 
 
@@ -49,7 +55,27 @@ public class ThirdPersonMovementScript : MonoBehaviour
 
     void Update()
     {
-
+        
+        if (Input.GetButtonDown("Run"))
+        {
+            _animator.SetBool(isRunning, true);
+            speed = 12f;
+        }
+        else if (Input.GetButtonUp("Run"))
+        {
+            _animator.SetBool(isRunning, false);
+            speed = 6f;
+        }
+        
+        if (Input.GetButtonDown("Jump"))
+        {
+            _animator.SetBool(Dodge,true);
+        }
+        else if (Input.GetButtonUp("Jump"))
+        {
+            _animator.SetBool(Dodge,false);
+        }
+        
         
         // getting our input
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -83,7 +109,7 @@ public class ThirdPersonMovementScript : MonoBehaviour
         }
         
         
-        _animator.SetFloat("Speed", velocity);
+        _animator.SetFloat(Speed, velocity);
 
 
         

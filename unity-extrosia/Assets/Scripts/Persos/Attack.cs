@@ -38,10 +38,7 @@ public class Attack : MonoBehaviour
             ShootProjectile(2);
         }
         
-        if (launchTime - Time.deltaTime > 30f)
-        {
-            DestroyProjectile();
-        }
+        
         
     }
 
@@ -65,10 +62,7 @@ public class Attack : MonoBehaviour
         
     }
     
-    private void DestroyProjectile ()
-    {
-        Destroy(gameObject);
-    }
+    
 
     // Update is called once per frame
     void InstantiateProjectile(Transform firepoint, int choice)
