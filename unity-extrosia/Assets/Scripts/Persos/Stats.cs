@@ -43,10 +43,10 @@ public class Stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     TakeDamage(20);
+        // }
 
         
         canAttack = currentMana >= 0;
@@ -56,7 +56,11 @@ public class Stats : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && canAttack)
         {
-            
+            ManaAttack(5);
+        }
+        
+        if (Input.GetButtonDown("Fire2") && canAttack)
+        {
             ManaAttack(20);
         }
             

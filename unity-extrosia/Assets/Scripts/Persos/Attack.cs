@@ -8,30 +8,44 @@ public class Attack : MonoBehaviour
 
     private Vector3 destination;
     
-    public GameObject projectile;
+    public GameObject projectile1;
+    public GameObject projectile2;
+    
     public float projSpeed = 30f;
     public float fireRate = 4f;
     private float timeToFire;
 
     public float arcRange = 1f;
     public Transform firepoint;
-    
+    public float launchTime; 
     public Rigidbody rb;
-    public 
+     
 
-    
     
     // Start is called before the first frame update
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && Time.time >= timeToFire)
         {
+            launchTime = Time.time;
             timeToFire = Time.time + 1 / fireRate;
-            ShootProjectile();
+            ShootProjectile(1);
         }
+        if (Input.GetButtonDown("Fire2") && Time.time >= timeToFire)
+        {
+            launchTime = Time.time;
+            timeToFire = Time.time + 1 / fireRate;
+            ShootProjectile(2);
+        }
+        
+        if (launchTime - Time.deltaTime > 30f)
+        {
+            DestroyProjectile();
+        }
+        
     }
 
-    private void ShootProjectile()
+    private void ShootProjectile(int choice=0)
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         
@@ -46,13 +60,31 @@ public class Attack : MonoBehaviour
             destination = ray.GetPoint(100);
         }
 
-        InstantiateProjectile(firepoint);
+        InstantiateProjectile(firepoint, choice);
         
+        
+    }
+    
+    private void DestroyProjectile ()
+    {
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
-    void InstantiateProjectile(Transform firepoint)
+    void InstantiateProjectile(Transform firepoint, int choice)
     {
+        GameObject projectile = default;
+        
+        switch (choice)
+        {
+           case 1:
+                projectile = projectile1; 
+                break;
+           case 2:
+               projectile = projectile2;
+               break;
+        }
+        
         var projectileObj = Instantiate(projectile, firepoint.position, Quaternion.identity) as GameObject;
         projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projSpeed;
         iTween.PunchPosition(projectileObj,
