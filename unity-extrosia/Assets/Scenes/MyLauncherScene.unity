@@ -424,9 +424,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1418077513}
+      - m_Target: {fileID: 1418077512}
         m_TargetAssemblyTypeName: MyLauncher, Assembly-CSharp
-        m_MethodName: Connect
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
