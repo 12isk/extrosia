@@ -25,9 +25,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7594728855362080859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.064, y: 0, z: 0}
+  m_LocalPosition: {x: 0.205, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 733127318375708373}
   m_RootOrder: 0
@@ -91,21 +91,39 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.4437546
-        value: 0
-        inSlope: 0.25301218
-        outSlope: 0.25301218
+        time: 0.30146313
+        value: 0.54583025
+        inSlope: -1.4029523
+        outSlope: -1.4029523
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33998406
+        outWeight: 0.32699984
+      - serializedVersion: 3
+        time: 0.6096435
+        value: 0.28334758
+        inSlope: -0.7677499
+        outSlope: -0.7677499
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33679268
+        outWeight: 0.23639801
+      - serializedVersion: 3
+        time: 1
+        value: 0.0375
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 1, b: 0.268394, a: 1}
-      key1: {r: 0, g: 0.3301887, b: 0.027975127, a: 1}
+      key0: {r: 0.3388934, g: 0, b: 1, a: 1}
+      key1: {r: 0.12464659, g: 0.07238296, b: 0.24399996, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -113,9 +131,9 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 53970
-      ctime2: 0
-      ctime3: 0
+      ctime1: 26792
+      ctime2: 65342
+      ctime3: 65342
       ctime4: 0
       ctime5: 0
       ctime6: 0
@@ -129,7 +147,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 2
+      m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
@@ -153,7 +171,7 @@ GameObject:
   - component: {fileID: 7720950419747807804}
   - component: {fileID: -1104206798111836602}
   m_Layer: 0
-  m_Name: Green_Att
+  m_Name: Attack_purp
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,9 +185,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7764351329508152084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.047, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -0.269, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8028031223723475608}
   - {fileID: 4795991497962679446}
@@ -219,6 +237,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactVFX: {fileID: 4877105213244461520, guid: 17dbb812b9b545c4cbf8adc550cd1ee0, type: 3}
   collided: 0
+  launchTime: 0
+  damage: 15
 --- !u!1 &8153441433447234681
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +462,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.06268263, g: 1, b: 0, a: 1}
+      maxColor: {r: 0.05077839, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

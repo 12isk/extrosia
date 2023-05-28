@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 1315484314051512933}
   - component: {fileID: 7903166628077909149}
   m_Layer: 0
-  m_Name: eva_rigged v4
+  m_Name: Eva - Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,6 +357,7 @@ MonoBehaviour:
   currentHealth: 0
   currentMana: 0
   currentFinalObjects: 0
+  isAlive: 0
   hasAllItems: 0
   healthBar: {fileID: 0}
   manaBar: {fileID: 0}
