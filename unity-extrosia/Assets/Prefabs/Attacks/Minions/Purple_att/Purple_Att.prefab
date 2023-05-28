@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 7720950419747807804}
   - component: {fileID: -1104206798111836602}
   m_Layer: 0
-  m_Name: Orange_Att
+  m_Name: Purple_Att
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,6 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactVFX: {fileID: 4877105213244461520, guid: 519a395a0658a2e42a9018fedcb85902, type: 3}
   collided: 0
+  launchTime: 0
+  damage: 15
 --- !u!1 &8153441433447234681
 GameObject:
   m_ObjectHideFlags: 0
