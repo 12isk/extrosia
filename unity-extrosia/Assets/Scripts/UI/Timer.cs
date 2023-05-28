@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    float time;
+    /*float time;
     public float TimerInterval = 5f ;
     float tick;
 
@@ -26,5 +26,5 @@ public class Timer : MonoBehaviour
             tick = time + TimerInterval;
             Debug.log ("Timer");
         }
-    }
+    }*/
 }
