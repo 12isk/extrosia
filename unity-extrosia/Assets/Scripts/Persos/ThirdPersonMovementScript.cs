@@ -59,7 +59,7 @@ public class ThirdPersonMovementScript : MonoBehaviour
         if (Input.GetButtonDown("Run"))
         {
             _animator.SetBool(isRunning, true);
-            speed = 12f;
+            speed = 19f;
         }
         else if (Input.GetButtonUp("Run"))
         {

@@ -15,9 +15,11 @@ public class Enemy : MonoBehaviour
     
     public LayerMask whatIsGround, whatIsPlayer;
 
+    //health bar
+    public float maxHealth;
     public float health;
     
-    
+    public HealthBar healthBar;
     // Patrolling
 
     public Vector3 walkPoint;
@@ -35,11 +37,20 @@ public class Enemy : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    
+    // Drops 
+    public GameObject explosion;
+    public GameObject healthDrop;
+    public GameObject manaDrop;
 
     private void Awake()
     {
         player = GameObject.Find("Third Person Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        
     }
 
 
@@ -133,13 +144,31 @@ public class Enemy : MonoBehaviour
         {
             Invoke(nameof(DestroyEnemy), .5f);
         }
+        
+        healthBar.SetHealth(health);
     }
 
     private void DestroyEnemy()
     {
         Destroy(gameObject);
+        var position = transform.position;
+        Instantiate(explosion, position, quaternion.identity);
+        Instantiate(healthDrop, position, quaternion.identity);
+        Instantiate(manaDrop, position, quaternion.identity);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            var bullet = collision.gameObject.GetComponent<Projectile>();
+            int damage = bullet.damage;
+            TakeDamage(damage);
+        }
+        
+    }
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
