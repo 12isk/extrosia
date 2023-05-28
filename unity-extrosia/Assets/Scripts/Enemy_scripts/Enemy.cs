@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Third Person Player").transform;
+        player = GameObject.Find("Eva - Player").transform;
         agent = GetComponent<NavMeshAgent>();
         
         health = maxHealth;
