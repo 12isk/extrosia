@@ -11,10 +11,8 @@ public class Stats : MonoBehaviour
     
     public int currentHealth;
     public int currentMana;
-    
     public int currentFinalObjects;
-    
-    public bool isAlive;
+
     public bool hasAllItems;
     
     public HealthBar healthBar;
@@ -53,7 +51,7 @@ public class Stats : MonoBehaviour
         // {
         //     TakeDamage(20);
         // }
-        isAlive = currentHealth > 0;
+
         hasAllItems = currentFinalObjects >= 3;
         canAttack = currentMana >= 0;
 
@@ -63,13 +61,6 @@ public class Stats : MonoBehaviour
             Debug.Log("You have all the items");
         }
 
-
-        if (!isAlive)
-        {
-            Debug.Log("You died");
-        }
-        
-        
         //todo: add mana reducing stuff
 
         if (Input.GetButtonDown("Fire1") && canAttack)
