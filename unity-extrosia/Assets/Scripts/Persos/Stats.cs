@@ -68,26 +68,19 @@ public class Stats : MonoBehaviour
         {
             Debug.Log("You died");
         }
-        
-        
-        //todo: add mana reducing stuff
+
+
 
         if (Input.GetButtonDown("Fire1") && canAttack)
         {
             ManaAttack(5);
         }
-        
+
         if (Input.GetButtonDown("Fire2") && canAttack)
         {
             ManaAttack(20);
         }
 
-    }
-    
-    public void ExpandManaLimit(int amount)
-    {
-        maxMana += amount*2;
-        manaBar.SetMaxMana(maxMana);
     }
 
     private void OnCollisionEnter(Collision collision)

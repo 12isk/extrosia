@@ -45,6 +45,8 @@ public class Attack : MonoBehaviour
     private void ShootProjectile(int choice=0)
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        // Vector3 playerDirection = transform.forward;
+        // Ray ray = new Ray(transform.position, playerDirection+Vector3.up*0.5f);
         
         RaycastHit hit;
 

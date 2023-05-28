@@ -4,7 +4,7 @@ using Items.Drops;
 using UnityEngine;
 using Types = Items.Drops.Types;
 
-public class Drop : MonoBehaviour
+public class Drops : MonoBehaviour
 {
 
     public Types type;

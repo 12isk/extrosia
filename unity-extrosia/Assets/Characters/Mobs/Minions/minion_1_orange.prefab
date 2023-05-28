@@ -115,7 +115,7 @@ MonoBehaviour:
     m_Bits: 8
   maxHealth: 0
   health: 75
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2705097714773523172}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 3
   timeBetweenAttack: 0.3
@@ -124,6 +124,9 @@ MonoBehaviour:
   attackRange: 30
   playerInSightRange: 0
   playerInAttackRange: 0
+  explosion: {fileID: 0}
+  healthDrop: {fileID: 0}
+  manaDrop: {fileID: 0}
 --- !u!195 &5140279126030659731
 NavMeshAgent:
   m_ObjectHideFlags: 0
