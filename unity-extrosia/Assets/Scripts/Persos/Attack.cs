@@ -18,7 +18,6 @@ public class Attack : MonoBehaviour
     public float arcRange = 1f;
     public Transform firepoint;
     public float launchTime; 
-    public Rigidbody rb;
      
 
     

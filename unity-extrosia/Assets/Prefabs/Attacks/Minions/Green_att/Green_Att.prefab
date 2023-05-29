@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 733127318375708373}
   - component: {fileID: -5326937960084746775}
   - component: {fileID: 7720950419747807804}
-  - component: {fileID: -1104206798111836602}
+  - component: {fileID: 5121054092270042627}
   m_Layer: 0
   m_Name: Green_Att
   m_TagString: Bullet
@@ -205,7 +205,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-1104206798111836602
+--- !u!114 &5121054092270042627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,13 +214,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7764351329508152084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb935400ff43c4f4ab89424aa894b230, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b7e53c0d90892545b596a964f41f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactVFX: {fileID: 4877105213244461520, guid: 17dbb812b9b545c4cbf8adc550cd1ee0, type: 3}
+  impactVFX: {fileID: 4877105213244461520, guid: 1a654cfcb82b06f47a6e34380b1b2158, type: 3}
   collided: 0
   launchTime: 0
-  damage: 7
+  damage: 10
 --- !u!1 &8153441433447234681
 GameObject:
   m_ObjectHideFlags: 0
