@@ -398,9 +398,10 @@ GameObject:
   - component: {fileID: 8460861861859729551}
   - component: {fileID: 4811215065409892138}
   - component: {fileID: 7286870194135456736}
-  - component: {fileID: 5966411246629399231}
   - component: {fileID: 2265318322492150824}
   - component: {fileID: 3330099161036545184}
+  - component: {fileID: 1979858599185010357}
+  - component: {fileID: 6475810095160832066}
   - component: {fileID: 558315173630261562}
   - component: {fileID: 2684901382276901440}
   m_Layer: 0
@@ -480,40 +481,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5966411246629399231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9088498955691293237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03bf3e6fdea78e43bec922992a6f911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 2265318322492150824}
-  player: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 8
-  maxHealth: 0
-  health: 50
-  healthBar: {fileID: 4551157481195971141}
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  timeBetweenAttack: 0.5
-  projectile: {fileID: 7764351329508152084, guid: 4646ff8c6008fc747a625b6f657e9f2e, type: 3}
-  sightRange: 50
-  attackRange: 20
-  playerInSightRange: 0
-  playerInAttackRange: 0
-  explosion: {fileID: 0}
-  healthDrop: {fileID: 0}
-  manaDrop: {fileID: 0}
 --- !u!195 &2265318322492150824
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -554,6 +521,44 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1979858599185010357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088498955691293237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3c1cb3c0c758f4bbd3ee2781de622d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8021922458494368659, guid: f8d26d77e45c8404faaa0dface0a31d5, type: 3}
+  agent: {fileID: 2265318322492150824}
+  health: 0
+  maxHealth: 50
+  healthBar: {fileID: 4551157481195971141}
+  speed: 40
+  attackRange: 30
+  stopChaseDistance: 60
+  reachedPositionDistance: 10
+  projectile: {fileID: 7764351329508152084, guid: 4646ff8c6008fc747a625b6f657e9f2e, type: 3}
+--- !u!114 &6475810095160832066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088498955691293237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2ca23e7eea9ff47828d7fcddd634ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManaDrop: {fileID: 4941989552321852333, guid: 4ff69ea7241354249b75a4145b6b7690, type: 3}
+  HealthDrop: {fileID: 8076065162615655234, guid: 918fd8c1867697e4e874bb92a1a72d2c, type: 3}
+  ExpDrop: {fileID: 6470237457177503042, guid: 58fa9028db0060d4c973f5d4d77a7abc, type: 3}
+  explosion: {fileID: 0}
 --- !u!136 &558315173630261562
 CapsuleCollider:
   m_ObjectHideFlags: 0

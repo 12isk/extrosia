@@ -1016,13 +1016,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5005306989305639791}
-  - component: {fileID: 3683381583653978370}
   - component: {fileID: 1773305927953354463}
   - component: {fileID: 6493139185439275199}
   - component: {fileID: 1819689560119350274}
   - component: {fileID: 3521744105640704574}
   - component: {fileID: 7377375529771613692}
-  - component: {fileID: 8939470535071396660}
+  - component: {fileID: 3544157284935523904}
   m_Layer: 0
   m_Name: minion_3_vert
   m_TagString: Enemy
@@ -1059,40 +1058,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3683381583653978370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5637869689354316245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03bf3e6fdea78e43bec922992a6f911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 6493139185439275199}
-  player: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 8
-  maxHealth: 0
-  health: 30
-  healthBar: {fileID: 9165146844968498786}
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  timeBetweenAttack: 0.5
-  projectile: {fileID: 7764351329508152084, guid: 3b8c8adbf1251e04b9305d51c5e1bc5b, type: 3}
-  sightRange: 35
-  attackRange: 15
-  playerInSightRange: 0
-  playerInAttackRange: 0
-  explosion: {fileID: 0}
-  healthDrop: {fileID: 0}
-  manaDrop: {fileID: 0}
 --- !u!143 &1773305927953354463
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1174,10 +1139,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3c1cb3c0c758f4bbd3ee2781de622d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  agent: {fileID: 0}
-  projectile: {fileID: 0}
---- !u!114 &8939470535071396660
+  player: {fileID: 8021922458494368659, guid: f8d26d77e45c8404faaa0dface0a31d5, type: 3}
+  agent: {fileID: 6493139185439275199}
+  health: 0
+  maxHealth: 30
+  healthBar: {fileID: 9165146844968498786}
+  speed: 40
+  attackRange: 30
+  stopChaseDistance: 80
+  reachedPositionDistance: 10
+  projectile: {fileID: 7764351329508152084, guid: 3b8c8adbf1251e04b9305d51c5e1bc5b, type: 3}
+--- !u!114 &3544157284935523904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1186,12 +1158,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5637869689354316245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c3c1cb3c0c758f4bbd3ee2781de622d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e2ca23e7eea9ff47828d7fcddd634ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  agent: {fileID: 0}
-  projectile: {fileID: 0}
+  ManaDrop: {fileID: 4941989552321852333, guid: 4ff69ea7241354249b75a4145b6b7690, type: 3}
+  HealthDrop: {fileID: 8076065162615655234, guid: 918fd8c1867697e4e874bb92a1a72d2c, type: 3}
+  ExpDrop: {fileID: 6470237457177503042, guid: 58fa9028db0060d4c973f5d4d77a7abc, type: 3}
+  explosion: {fileID: 0}
 --- !u!1 &5998689558872432467
 GameObject:
   m_ObjectHideFlags: 0

@@ -85,4 +85,6 @@ public class Attack : MonoBehaviour
             Random.Range(0.5f,2f));
     }
 
+    
+    
 } 
