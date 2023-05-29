@@ -18,12 +18,18 @@ public class Drops : MonoBehaviour
             switch (type)
             {
                 case Types.Health:
-                    stats.currentHealth += amount;
-                    stats.healthBar.SetHealth(stats.currentHealth);
+                    if (stats.maxHealth > stats.currentHealth+amount)
+                    {
+                        stats.currentHealth += amount;
+                        stats.healthBar.SetHealth(stats.currentHealth);
+                    }
                     break;
                 case Types.Mana:
-                    stats.currentMana += amount;
-                    stats.manaBar.SetMana(stats.currentMana);
+                    if (stats.maxMana > stats.currentMana+amount)
+                    {
+                        stats.currentMana += amount;
+                        stats.manaBar.SetMana(stats.currentMana);
+                    }
                     break;
                 case Types.Exp:
                     stats.maxHealth += amount;

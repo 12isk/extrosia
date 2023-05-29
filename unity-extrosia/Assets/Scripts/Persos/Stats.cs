@@ -91,7 +91,7 @@ public class Stats : MonoBehaviour
             Destroy(collision.gameObject);
         }
         
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             var bullet = collision.gameObject.GetComponent<Projectile>();
             int damage = bullet.damage;
