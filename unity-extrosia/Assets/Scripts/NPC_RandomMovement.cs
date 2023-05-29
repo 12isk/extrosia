@@ -16,7 +16,10 @@ public class NPC_RandomMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.CompareTag)
+        if (collision.gameObject.CompareTag("NPCs"))
+        {
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
     }
     void Update()
     {
