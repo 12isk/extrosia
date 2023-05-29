@@ -17,7 +17,7 @@ public class Dropper : MonoBehaviour
         Instantiate(HealthDrop, transform.position, Quaternion.identity);
         Instantiate(ExpDrop, transform.position, Quaternion.identity);
         
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        //Instantiate(explosion, transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame

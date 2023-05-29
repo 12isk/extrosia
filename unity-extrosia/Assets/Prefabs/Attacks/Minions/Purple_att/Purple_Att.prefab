@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: -6021020546419422000}
   m_Layer: 0
   m_Name: Purple_Att
-  m_TagString: Bullet
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -354,14 +354,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  projectile1: {fileID: 0}
-  projectile2: {fileID: 0}
+  projectile1: {fileID: 7764351329508152084, guid: 9df6e61e4c6426247b1d1d5d5e17b9d5, type: 3}
+  projectile2: {fileID: 7764351329508152084, guid: 918f0e1f83079d841b2e8a1b44a4b728, type: 3}
   projSpeed: 30
   fireRate: 4
   arcRange: 1
-  firepoint: {fileID: 0}
+  firepoint: {fileID: 6314955286785036138}
   launchTime: 0
-  rb: {fileID: 0}
 --- !u!114 &1315484314051512933
 MonoBehaviour:
   m_ObjectHideFlags: 0
