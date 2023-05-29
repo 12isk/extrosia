@@ -205,9 +205,8 @@ GameObject:
   - component: {fileID: 2052955611660904149}
   - component: {fileID: 2052955611660904145}
   - component: {fileID: 2052955611660904150}
-  - component: {fileID: 2052955611660904147}
   - component: {fileID: 2052955611660904143}
-  - component: {fileID: 2052955611660904142}
+  - component: {fileID: 3877152542890701682}
   - component: {fileID: 1315484314051512933}
   - component: {fileID: 7903166628077909149}
   m_Layer: 0
@@ -319,27 +318,6 @@ MonoBehaviour:
   speed: 6
   turnSmoothTime: 0.25
   rotationSpeed: 180
---- !u!114 &2052955611660904147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206113204535548792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccd9d201d89cb2d45a08692a267a13fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 2052955611660904148}
-  animator: {fileID: 5554915166437661624}
-  jumpForce: 500
-  jumpHeight: 0
-  speed: 6
-  fallMultiplier: 2.5
-  jumpButtonGracePeriod: 0.2
-  jumpButtonPressedTime: 0
-  lastGroundedTime: 0
 --- !u!114 &2052955611660904143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +341,7 @@ MonoBehaviour:
   manaBar: {fileID: 0}
   canAttack: 0
   attack: {fileID: 0}
---- !u!114 &2052955611660904142
+--- !u!114 &3877152542890701682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,7 +350,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1206113204535548792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bc394f1b8f82f4c866f2bdaad7dea8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6959a55f85699214abc11f3905513b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
@@ -381,7 +359,7 @@ MonoBehaviour:
   projSpeed: 30
   fireRate: 4
   arcRange: 1
-  firepoint: {fileID: 6314955286785036138}
+  firepoint: {fileID: 0}
   launchTime: 0
   rb: {fileID: 0}
 --- !u!114 &1315484314051512933
