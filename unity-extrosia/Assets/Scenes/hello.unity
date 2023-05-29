@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3271.6584, g: 2882.941, b: 5390.216, a: 1}
+  m_IndirectSpecularColor: {r: 3276.2852, g: 2888.2627, b: 5399.8125, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6979,6 +6979,11 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!4 &561304553 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6314955286785036138, guid: 0ccfa34b8f336084491ce0fbe64506c3, type: 3}
+  m_PrefabInstance: {fileID: 2128700282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &591963202 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 21808c12cec2c487d95c11a54ab5fd16, type: 3}
@@ -9082,7 +9087,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830795831}
-  m_LocalRotation: {x: 0.017335799, y: 0.9826532, z: -0.12818897, w: 0.13289039}
+  m_LocalRotation: {x: 0.017335797, y: 0.9826532, z: -0.12818897, w: 0.13289037}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17841,7 +17846,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347030278}
-  m_LocalRotation: {x: 0.017335795, y: 0.9826532, z: -0.12818898, w: 0.13289034}
+  m_LocalRotation: {x: 0.017335795, y: 0.9826532, z: -0.12818898, w: 0.13289033}
   m_LocalPosition: {x: 352.93594, y: 6.400019, z: 796.24396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26749,6 +26754,26 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1347030279}
+    - target: {fileID: 3877152542890701682, guid: 0ccfa34b8f336084491ce0fbe64506c3, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1347030283}
+    - target: {fileID: 3877152542890701682, guid: 0ccfa34b8f336084491ce0fbe64506c3, type: 3}
+      propertyPath: firepoint
+      value: 
+      objectReference: {fileID: 561304553}
+    - target: {fileID: 3877152542890701682, guid: 0ccfa34b8f336084491ce0fbe64506c3, type: 3}
+      propertyPath: projSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877152542890701682, guid: 0ccfa34b8f336084491ce0fbe64506c3, type: 3}
+      propertyPath: projectile1
+      value: 
+      objectReference: {fileID: 7764351329508152084, guid: 9df6e61e4c6426247b1d1d5d5e17b9d5, type: 3}
+    - target: {fileID: 3877152542890701682, guid: 0ccfa34b8f336084491ce0fbe64506c3, type: 3}
+      propertyPath: projectile2
+      value: 
+      objectReference: {fileID: 7764351329508152084, guid: 918f0e1f83079d841b2e8a1b44a4b728, type: 3}
     - target: {fileID: 7903166628077909149, guid: 0ccfa34b8f336084491ce0fbe64506c3, type: 3}
       propertyPath: sceneViewId
       value: 1
