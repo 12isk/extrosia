@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI; 
-public class NPC_RandomMovement : MonoBehaviour 
+public class NPC_RandomMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public float range; //range of movement
@@ -14,7 +14,10 @@ public class NPC_RandomMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.CompareTag)
+    }
     void Update()
     {
         if(agent.remainingDistance <= agent.stoppingDistance) //done with path
