@@ -3,26 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stats : MonoBehaviour
+using Photon.Pun;
+
+public class Stats : MonoBehaviourPunCallbacks
 {
 
     public float maxHealth;
     public float maxMana;
-    
+
     public float currentHealth;
     public float currentMana;
-    
+
     public int currentFinalObjects;
-    
+
     public bool isAlive;
     public bool hasWon;
-    
+
     public HealthBar healthBar;
 
     public ManaBar manaBar;
     public bool canAttack;
 
     public Attack attack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +35,7 @@ public class Stats : MonoBehaviour
         //todo: add max mana
         manaBar.SetMaxMana(maxMana);
         healthBar.SetMaxHealth(maxHealth);
-        
+
     }
 
     private void TakeDamage(float damage)
@@ -46,6 +49,7 @@ public class Stats : MonoBehaviour
         currentMana -= amount;
         manaBar.SetMana(currentMana);
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -56,7 +60,7 @@ public class Stats : MonoBehaviour
         isAlive = currentHealth > 0;
         //hasAllItems = currentFinalObjects >= 3;
         canAttack = currentMana >= 0;
-        hasWon = currentFinalObjects >= 4 && isAlive ;
+        hasWon = currentFinalObjects >= 4 && isAlive;
         // if (hasAllItems)
         // {
         //     //todo: add win thing here
@@ -67,12 +71,18 @@ public class Stats : MonoBehaviour
         {
             currentHealth += 0.025f;
         }
+
         if (currentMana < maxMana)
         {
             currentMana += 0.025f;
         }
-        
-        
+
+        if (hasWon)
+        {
+            photonView.RPC("haslost", RpcTarget.Others);
+        }
+
+
 
         if (!isAlive)
         {
@@ -100,13 +110,24 @@ public class Stats : MonoBehaviour
             currentFinalObjects += 1;
             Destroy(collision.gameObject);
         }
-        
+
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             var bullet = collision.gameObject.GetComponent<Projectile>();
             float damage = bullet.damage;
             TakeDamage(damage);
         }
-        
+
     }
 }
+
+
+
+
+/* [PunRPC]
+ public void haslost()
+ {
+
+ }
+*/
+
