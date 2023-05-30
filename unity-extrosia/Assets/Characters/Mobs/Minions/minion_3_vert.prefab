@@ -1055,6 +1055,7 @@ Transform:
   - {fileID: 8730091110485259452}
   - {fileID: 1877458032969328996}
   - {fileID: 4606886777101991282}
+  - {fileID: 6892513554981266236}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1141,13 +1142,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8021922458494368659, guid: f8d26d77e45c8404faaa0dface0a31d5, type: 3}
   agent: {fileID: 6493139185439275199}
-  health: 0
-  maxHealth: 30
-  healthBar: {fileID: 9165146844968498786}
-  speed: 40
-  attackRange: 30
-  stopChaseDistance: 80
-  reachedPositionDistance: 10
   projectile: {fileID: 7764351329508152084, guid: 3b8c8adbf1251e04b9305d51c5e1bc5b, type: 3}
 --- !u!114 &3544157284935523904
 MonoBehaviour:
@@ -1165,6 +1159,37 @@ MonoBehaviour:
   HealthDrop: {fileID: 8076065162615655234, guid: 918fd8c1867697e4e874bb92a1a72d2c, type: 3}
   ExpDrop: {fileID: 6470237457177503042, guid: 58fa9028db0060d4c973f5d4d77a7abc, type: 3}
   explosion: {fileID: 0}
+--- !u!1 &5975004413202769187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6892513554981266236}
+  m_Layer: 0
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6892513554981266236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975004413202769187}
+  m_LocalRotation: {x: -0.014297816, y: -0, z: -0, w: 0.99989784}
+  m_LocalPosition: {x: 0.06541443, y: 3.69, z: 1.9400024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5005306989305639791}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: -1.638, y: 0, z: 0}
 --- !u!1 &5998689558872432467
 GameObject:
   m_ObjectHideFlags: 0

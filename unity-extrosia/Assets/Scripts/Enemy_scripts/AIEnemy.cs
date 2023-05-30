@@ -20,8 +20,13 @@ public class AIEnemy : MonoBehaviour
         private Vector3 startingPosition;
         private Vector3 roamPosition;
         private State state;
+
+        public Transform firepoint;
         public GameObject projectile;
 
+
+        public int fireRate;
+        
         private void Awake()
         {
             state = State.Roaming;
@@ -58,12 +63,16 @@ public class AIEnemy : MonoBehaviour
                     {
                         // Target within attack range
                         //Attack code
-                        Rigidbody rb = Instantiate(projectile, transform.position, quaternion.identity)
-                            .GetComponent<Rigidbody>();
+                        var projectileObj = Instantiate(projectile, firepoint.position, quaternion.identity);
         
+                        
+                        projectileObj.GetComponent<Rigidbody>().velocity = (player.position - firepoint.position).normalized * 35f;
+                        iTween.PunchPosition(projectileObj,
+                            new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0),
+                            Random.Range(0.5f,2f));
                         // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
                         // rb.AddForce(transform.up * 32f, ForceMode.Impulse);
-                        rb.velocity = (player.position - (transform.position+transform.up)).normalized * 35f;
+                        //rb.velocity = (player.position - (transform.position+transform.up)).normalized * 35f;
                         // Attack Code end 
                     }
 
