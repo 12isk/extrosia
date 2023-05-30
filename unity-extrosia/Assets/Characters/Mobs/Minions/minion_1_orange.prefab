@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2297243722537629152}
   - component: {fileID: 2904445090121841221}
   - component: {fileID: 1128818157273091727}
-  - component: {fileID: 5140279126030659731}
+  - component: {fileID: 5726097298076281492}
   - component: {fileID: 6391352491749711172}
   - component: {fileID: 3694318850457357007}
   - component: {fileID: 1239820567078333857}
@@ -95,7 +95,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!195 &5140279126030659731
+--- !u!195 &5726097298076281492
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,8 +113,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.055232897
-  m_BaseOffset: 0.027616449
+  m_Height: 0.055232882
+  m_BaseOffset: 0.027616441
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!143 &6391352491749711172
@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8021922458494368659, guid: f8d26d77e45c8404faaa0dface0a31d5, type: 3}
-  agent: {fileID: 5140279126030659731}
+  agent: {fileID: 5726097298076281492}
+  attackRange: 30
+  stopChaseDistance: 80
   firepoint: {fileID: 0}
   projectile: {fileID: 7764351329508152084, guid: 4646ff8c6008fc747a625b6f657e9f2e, type: 3}
   launchTime: 0

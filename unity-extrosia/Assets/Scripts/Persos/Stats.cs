@@ -15,7 +15,7 @@ public class Stats : MonoBehaviour
     public int currentFinalObjects;
     
     public bool isAlive;
-    public bool hasAllItems;
+    public bool hasWon;
     
     public HealthBar healthBar;
 
@@ -35,7 +35,7 @@ public class Stats : MonoBehaviour
         
     }
 
-    private void TakeDamage(int damage)
+    private void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -54,22 +54,22 @@ public class Stats : MonoBehaviour
         //     TakeDamage(20);
         // }
         isAlive = currentHealth > 0;
-        hasAllItems = currentFinalObjects >= 3;
+        //hasAllItems = currentFinalObjects >= 3;
         canAttack = currentMana >= 0;
-
-        if (hasAllItems)
-        {
-            //todo: add win thing here
-            Debug.Log("You have all the items");
-        }
+        hasWon = currentFinalObjects >= 4 && isAlive ;
+        // if (hasAllItems)
+        // {
+        //     //todo: add win thing here
+        //     Debug.Log("You have all the items");
+        // }
 
         if (currentHealth < maxHealth)
         {
-            currentHealth += 0.015f;
+            currentHealth += 0.025f;
         }
         if (currentMana < maxMana)
         {
-            currentMana += 0.015f;
+            currentMana += 0.025f;
         }
         
         
@@ -104,7 +104,7 @@ public class Stats : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             var bullet = collision.gameObject.GetComponent<Projectile>();
-            int damage = bullet.damage;
+            float damage = bullet.damage;
             TakeDamage(damage);
         }
         

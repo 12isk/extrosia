@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     public bool collided;
     public float launchTime;
     
-    public int damage = 10;
+    public float damage = 0.1f;
     
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
