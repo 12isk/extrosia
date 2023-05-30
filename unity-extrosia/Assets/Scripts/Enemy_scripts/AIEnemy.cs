@@ -41,6 +41,8 @@ public class AIEnemy : MonoBehaviour
         {
             startingPosition = transform.position;
             roamPosition = GetRoamingPosition();
+            
+            health = maxHealth;
         }
 
         private void Update()
@@ -70,11 +72,8 @@ public class AIEnemy : MonoBehaviour
                     float attackRange = 30f;
                     if ((Vector3.Distance(transform.position, player.position)) < attackRange)
                     {
-                        
-                        if ( Time.time - launchTime  <= fireRate)
-                        {
-                            InstantiateProjectile();
-                        }                        
+                        InstantiateProjectile();
+                                              
                     }
 
                     float stopChaseDistance = 80f;
@@ -113,11 +112,18 @@ public class AIEnemy : MonoBehaviour
 
         private void InstantiateProjectile()
         {
-            var projectileObj = Instantiate(projectile, firepoint.position, quaternion.identity);
-            projectileObj.GetComponent<Rigidbody>().velocity = (player.position - firepoint.position).normalized * 35f;
-            iTween.PunchPosition(projectileObj,
-                new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0),
-                Random.Range(0.5f,2f));
+            
+            if ( Time.time - launchTime  <= fireRate)
+            {
+                launchTime = Time.time;
+                var projectileObj = Instantiate(projectile, firepoint.position, quaternion.identity);
+                projectileObj.GetComponent<Rigidbody>().velocity = (player.position - firepoint.position).normalized * 35f;
+                iTween.PunchPosition(projectileObj,
+                    new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0),
+                    Random.Range(0.5f,2f));
+                
+            }  
+            
         }
         
         private void TakeDamage(int damage)
