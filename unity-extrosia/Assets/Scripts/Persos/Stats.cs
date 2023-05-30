@@ -35,7 +35,7 @@ public class Stats : MonoBehaviour
         
     }
 
-    private void TakeDamage(int damage)
+    private void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -104,7 +104,7 @@ public class Stats : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             var bullet = collision.gameObject.GetComponent<Projectile>();
-            int damage = bullet.damage;
+            float damage = bullet.damage;
             TakeDamage(damage);
         }
         

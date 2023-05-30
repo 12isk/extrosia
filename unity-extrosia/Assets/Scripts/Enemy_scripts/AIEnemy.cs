@@ -20,7 +20,10 @@ public class AIEnemy : MonoBehaviour
         private Vector3 startingPosition;
         private Vector3 roamPosition;
         private State state;
-
+        
+        public float attackRange = 30f;
+        public float stopChaseDistance = 80f;
+        
         public Transform firepoint;
         public GameObject projectile;
 
@@ -28,8 +31,8 @@ public class AIEnemy : MonoBehaviour
 
         public float fireRate= 2.5f;
         
-        public int health;
-        public int maxHealth;
+        public float health;
+        public float maxHealth;
         public HealthBar healthBar;
         
         private void Awake()
@@ -68,15 +71,15 @@ public class AIEnemy : MonoBehaviour
                     break;
                 case State.ChaseTarget:
                     agent.SetDestination(player.position);
+//                    float attackRange = 30f;
 
-                    float attackRange = 30f;
                     if ((Vector3.Distance(transform.position, player.position)) < attackRange)
                     {
                         InstantiateProjectile();
                                               
                     }
 
-                    float stopChaseDistance = 80f;
+                    //float stopChaseDistance = 80f;
                     if (Vector3.Distance(transform.position, player.position) > stopChaseDistance)
                     {
                         // Too far, stop chasing
@@ -112,21 +115,20 @@ public class AIEnemy : MonoBehaviour
 
         private void InstantiateProjectile()
         {
-            
-            if ( Time.time - launchTime  <= fireRate)
-            {
-                launchTime = Time.time;
-                var projectileObj = Instantiate(projectile, firepoint.position, quaternion.identity);
-                projectileObj.GetComponent<Rigidbody>().velocity = (player.position - firepoint.position).normalized * 35f;
-                iTween.PunchPosition(projectileObj,
-                    new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0),
-                    Random.Range(0.5f,2f));
-                
-            }  
-            
+
+
+            Debug.Log("Firing");
+            launchTime = Time.time;
+            var projectileObj = Instantiate(projectile, firepoint.position, quaternion.identity);
+            projectileObj.GetComponent<Rigidbody>().velocity = (player.position - firepoint.position).normalized * 35f;
+            iTween.PunchPosition(projectileObj,
+                new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0),
+                Random.Range(0.5f, 2f));
         }
         
-        private void TakeDamage(int damage)
+        
+        
+        private void TakeDamage(float damage)
      {
          health -= damage;
          if (health <= 0)
@@ -140,7 +142,7 @@ public class AIEnemy : MonoBehaviour
          if (collision.gameObject.CompareTag("Bullet"))
          {
              var bullet = collision.gameObject.GetComponent<Projectile>();
-             int damage = bullet.damage;
+             float damage = bullet.damage;
              TakeDamage(damage);
          }
          
@@ -159,4 +161,14 @@ public class AIEnemy : MonoBehaviour
                 state = State.ChaseTarget;
             }
         }
+        
+             private void OnDrawGizmosSelected()
+     {
+         Gizmos.color = Color.red;
+         var position = transform.position;
+         Gizmos.DrawWireSphere(position, attackRange);
+         Gizmos.color = Color.yellow;
+         Gizmos.DrawWireSphere(position, stopChaseDistance);
+
+     }
 }

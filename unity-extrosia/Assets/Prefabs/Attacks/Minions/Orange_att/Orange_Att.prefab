@@ -229,7 +229,7 @@ MonoBehaviour:
   impactVFX: {fileID: 4877105213244461520, guid: 519a395a0658a2e42a9018fedcb85902, type: 3}
   collided: 0
   launchTime: 0
-  damage: 20
+  damage: 0.2
 --- !u!1 &8153441433447234681
 GameObject:
   m_ObjectHideFlags: 0

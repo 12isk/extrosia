@@ -136,7 +136,7 @@ public class Enemy : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
 
@@ -163,7 +163,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             var bullet = collision.gameObject.GetComponent<Projectile>();
-            int damage = bullet.damage;
+            float damage = bullet.damage;
             TakeDamage(damage);
         }
         
