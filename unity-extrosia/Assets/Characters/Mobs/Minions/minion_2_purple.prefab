@@ -76,37 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &2854098452602132131
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7337092189542437439}
-  m_Layer: 0
-  m_Name: Firepoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7337092189542437439
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2854098452602132131}
-  m_LocalRotation: {x: -0.052942697, y: -0, z: -0, w: 0.99859756}
-  m_LocalPosition: {x: 0.003504173, y: 0.01640002, z: 0.0026698299}
-  m_LocalScale: {x: 1, y: 6.2283106, z: 0.43300772}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 8460861861859729551}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -6.07, y: 0, z: 0}
 --- !u!1 &4388994196430363060
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +152,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6618802000254185266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8998040040893798963}
+  m_Layer: 0
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8998040040893798963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618802000254185266}
+  m_LocalRotation: {x: -0.00000008146034, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.029926427, y: -0.001, z: 0.0167}
+  m_LocalScale: {x: 0.023094276, y: 0.14383832, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8460861861859729551}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8095353487821459431
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6708176822166375337}
-  - {fileID: 7337092189542437439}
+  - {fileID: 8998040040893798963}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -567,7 +567,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8021922458494368659, guid: f8d26d77e45c8404faaa0dface0a31d5, type: 3}
   agent: {fileID: 2265318322492150824}
-  firepoint: {fileID: 7337092189542437439}
+  attackRange: 30
+  stopChaseDistance: 80
+  targetRange: 50
+  firepoint: {fileID: 8998040040893798963}
   projectile: {fileID: 7764351329508152084, guid: 4646ff8c6008fc747a625b6f657e9f2e, type: 3}
   launchTime: 0
   fireRate: 2.5

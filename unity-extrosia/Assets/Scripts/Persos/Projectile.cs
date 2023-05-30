@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
     }
     public void Update()
     {
-        if (Time.deltaTime - launchTime >= 25f)
+        if (Time.deltaTime - launchTime >= 5f)
         {
             Destroy(this);
         }

@@ -23,7 +23,8 @@ public class AIEnemy : MonoBehaviour
         
         public float attackRange = 30f;
         public float stopChaseDistance = 80f;
-        
+        public float targetRange = 50f;
+
         public Transform firepoint;
         public GameObject projectile;
 
@@ -46,6 +47,7 @@ public class AIEnemy : MonoBehaviour
             roamPosition = GetRoamingPosition();
             
             health = maxHealth;
+            healthBar.SetMaxHealth(maxHealth);
         }
 
         private void Update()
@@ -59,11 +61,12 @@ public class AIEnemy : MonoBehaviour
                 default:
                 case State.Roaming:
                     agent.SetDestination(roamPosition);
-
+                    //Debug.Log("Roaming");
                     float reachedPositionDistance = 10f;
-                    if (Vector3.Distance(transform.position, roamPosition) < reachedPositionDistance)
+                    if (Vector3.Distance(transform.position, roamPosition)-reachedPositionDistance <= 11f)
                     {
                         // Reached Roam Position
+                        //Debug.Log("Roaming");
                         roamPosition = GetRoamingPosition();
                     }
 
@@ -72,7 +75,7 @@ public class AIEnemy : MonoBehaviour
                 case State.ChaseTarget:
                     agent.SetDestination(player.position);
 //                    float attackRange = 30f;
-
+                    Debug.Log("Chasing");
                     if ((Vector3.Distance(transform.position, player.position)) < attackRange)
                     {
                         InstantiateProjectile();
@@ -87,11 +90,11 @@ public class AIEnemy : MonoBehaviour
                     }
 
                     break;
-                case State.ShootingTarget:
-                    break;
+                // case State.ShootingTarget:
+                //     break;
                 case State.GoingBackToStart:
                     agent.SetDestination(startingPosition);
-
+                    Debug.Log("Going Back");    
                     reachedPositionDistance = 10f;
                     if (Vector3.Distance(transform.position, startingPosition) < reachedPositionDistance)
                     {
@@ -105,18 +108,23 @@ public class AIEnemy : MonoBehaviour
 
         private Vector3 GetRoamingPosition()
         {
+            if (Vector3.Distance(transform.position, player.position) - targetRange < 2f)
+            {
+                Debug.Log("Target Found");
+                // Player within target range
+                state = State.ChaseTarget;
+            }
             return startingPosition + GetRandomDir() * Random.Range(10f, 70f);
         }
 
         private static Vector3 GetRandomDir()
         {
-            return new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
+            return new Vector3(UnityEngine.Random.Range(-1f, 1f), 0, Random.Range(-1f,1f)).normalized;
         }
 
         private void InstantiateProjectile()
         {
-
-
+            
             Debug.Log("Firing");
             launchTime = Time.time;
             var projectileObj = Instantiate(projectile, firepoint.position, quaternion.identity);
@@ -154,9 +162,11 @@ public class AIEnemy : MonoBehaviour
      }
         private void FindTarget()
         {
-            float targetRange = 50f;
-            if (Vector3.Distance(transform.position, player.position) < targetRange)
+            Debug.Log("Finding");
+
+            if (Vector3.Distance(transform.position, player.position) - targetRange < 2f)
             {
+                Debug.Log("Target Found");
                 // Player within target range
                 state = State.ChaseTarget;
             }
@@ -169,6 +179,8 @@ public class AIEnemy : MonoBehaviour
          Gizmos.DrawWireSphere(position, attackRange);
          Gizmos.color = Color.yellow;
          Gizmos.DrawWireSphere(position, stopChaseDistance);
+         Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(position, targetRange);
 
      }
 }

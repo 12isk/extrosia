@@ -1142,6 +1142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8021922458494368659, guid: f8d26d77e45c8404faaa0dface0a31d5, type: 3}
   agent: {fileID: 6493139185439275199}
+  attackRange: 45
+  stopChaseDistance: 100
   firepoint: {fileID: 6892513554981266236}
   projectile: {fileID: 7764351329508152084, guid: 3b8c8adbf1251e04b9305d51c5e1bc5b, type: 3}
   launchTime: 0

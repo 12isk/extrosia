@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 2297243722537629152}
   - component: {fileID: 2904445090121841221}
   - component: {fileID: 1128818157273091727}
+  - component: {fileID: 7546791985294655933}
   - component: {fileID: 5726097298076281492}
   - component: {fileID: 6391352491749711172}
   - component: {fileID: 3694318850457357007}
   - component: {fileID: 1239820567078333857}
-  - component: {fileID: 7546791985294655933}
   - component: {fileID: 1809338141564686710}
   m_Layer: 0
   m_Name: minion_1_orange
@@ -95,6 +95,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7546791985294655933
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489181100254801754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.05
+  m_Height: 0.04
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.02078705, z: -0.010282967}
 --- !u!195 &5726097298076281492
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -128,7 +142,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.055232897
+  m_Height: 0.18
   m_Radius: 0.058376044
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -151,8 +165,9 @@ MonoBehaviour:
   agent: {fileID: 5726097298076281492}
   attackRange: 30
   stopChaseDistance: 80
-  firepoint: {fileID: 0}
-  projectile: {fileID: 7764351329508152084, guid: 4646ff8c6008fc747a625b6f657e9f2e, type: 3}
+  targetRange: 50
+  firepoint: {fileID: 3164856246365031651}
+  projectile: {fileID: 7764351329508152084, guid: de7ce35a1fdc1ab4498a26b427fcb551, type: 3}
   launchTime: 0
   fireRate: 2.5
   health: 0
@@ -178,20 +193,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!136 &7546791985294655933
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489181100254801754}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.058376044
-  m_Height: 0.096806996
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.02078705, z: -0.010282967}
 --- !u!114 &1809338141564686710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3164856246365031651}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3218069727727988324}
   m_LocalRotation: {x: -0.056334022, y: -0, z: -0, w: 0.998412}
-  m_LocalPosition: {x: -0.00000023594015, y: -0.010400002, z: 0.025899624}
+  m_LocalPosition: {x: -0.00000023594015, y: -0.0077, z: 0.0498}
   m_LocalScale: {x: 0.020616764, y: 0.020616764, z: 0.020616764}
   m_ConstrainProportionsScale: 0
   m_Children: []
