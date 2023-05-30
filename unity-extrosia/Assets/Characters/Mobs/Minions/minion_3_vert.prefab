@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 6493139185439275199}
   - component: {fileID: 1819689560119350274}
   - component: {fileID: 3521744105640704574}
-  - component: {fileID: 7377375529771613692}
+  - component: {fileID: 6065244171807170070}
   - component: {fileID: 3544157284935523904}
   m_Layer: 0
   m_Name: minion_3_vert
@@ -1128,7 +1128,7 @@ CapsuleCollider:
   m_Height: 5.66
   m_Direction: 1
   m_Center: {x: 0, y: 2.36, z: 0}
---- !u!114 &7377375529771613692
+--- !u!114 &6065244171807170070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1137,12 +1137,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5637869689354316245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c3c1cb3c0c758f4bbd3ee2781de622d, type: 3}
+  m_Script: {fileID: 11500000, guid: c79f5e295320feb43ae826ea9a1b37c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8021922458494368659, guid: f8d26d77e45c8404faaa0dface0a31d5, type: 3}
   agent: {fileID: 6493139185439275199}
+  firepoint: {fileID: 6892513554981266236}
   projectile: {fileID: 7764351329508152084, guid: 3b8c8adbf1251e04b9305d51c5e1bc5b, type: 3}
+  launchTime: 0
+  fireRate: 2.5
+  health: 0
+  maxHealth: 30
+  healthBar: {fileID: 9165146844968498786}
 --- !u!114 &3544157284935523904
 MonoBehaviour:
   m_ObjectHideFlags: 0

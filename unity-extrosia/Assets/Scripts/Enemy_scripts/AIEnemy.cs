@@ -24,8 +24,13 @@ public class AIEnemy : MonoBehaviour
         public Transform firepoint;
         public GameObject projectile;
 
+        public float launchTime;
 
-        public int fireRate;
+        public float fireRate= 2.5f;
+        
+        public int health;
+        public int maxHealth;
+        public HealthBar healthBar;
         
         private void Awake()
         {
@@ -40,6 +45,10 @@ public class AIEnemy : MonoBehaviour
 
         private void Update()
         {
+            
+            healthBar.SetHealth(health);
+            
+            
             switch (state)
             {
                 default:
@@ -61,19 +70,11 @@ public class AIEnemy : MonoBehaviour
                     float attackRange = 30f;
                     if ((Vector3.Distance(transform.position, player.position)) < attackRange)
                     {
-                        // Target within attack range
-                        //Attack code
-                        var projectileObj = Instantiate(projectile, firepoint.position, quaternion.identity);
-        
                         
-                        projectileObj.GetComponent<Rigidbody>().velocity = (player.position - firepoint.position).normalized * 35f;
-                        iTween.PunchPosition(projectileObj,
-                            new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0),
-                            Random.Range(0.5f,2f));
-                        // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-                        // rb.AddForce(transform.up * 32f, ForceMode.Impulse);
-                        //rb.velocity = (player.position - (transform.position+transform.up)).normalized * 35f;
-                        // Attack Code end 
+                        if ( Time.time - launchTime  <= fireRate)
+                        {
+                            InstantiateProjectile();
+                        }                        
                     }
 
                     float stopChaseDistance = 80f;
@@ -110,6 +111,39 @@ public class AIEnemy : MonoBehaviour
             return new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
         }
 
+        private void InstantiateProjectile()
+        {
+            var projectileObj = Instantiate(projectile, firepoint.position, quaternion.identity);
+            projectileObj.GetComponent<Rigidbody>().velocity = (player.position - firepoint.position).normalized * 35f;
+            iTween.PunchPosition(projectileObj,
+                new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0),
+                Random.Range(0.5f,2f));
+        }
+        
+        private void TakeDamage(int damage)
+     {
+         health -= damage;
+         if (health <= 0)
+         {
+             Destroy(gameObject);
+         }
+     }
+     private void OnCollisionEnter(Collision collision)
+     {
+         
+         if (collision.gameObject.CompareTag("Bullet"))
+         {
+             var bullet = collision.gameObject.GetComponent<Projectile>();
+             int damage = bullet.damage;
+             TakeDamage(damage);
+         }
+         
+         if (collision.gameObject.CompareTag("Enemy"))
+         {
+             Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+         }
+         
+     }
         private void FindTarget()
         {
             float targetRange = 50f;
