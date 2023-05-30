@@ -5,5 +5,6 @@
         Health,
         Mana,
         Exp,
+        Relics,
     }
 }

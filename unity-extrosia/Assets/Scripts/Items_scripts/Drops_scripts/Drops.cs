@@ -37,6 +37,9 @@ public class Drops : MonoBehaviour
                     stats.maxMana += amount;
                     stats.manaBar.SetMaxMana(stats.maxMana);
                     break;
+                case Types.Relics:
+                    stats.currentFinalObjects += amount;
+                    break;
             }
             Destroy(gameObject);
         }
