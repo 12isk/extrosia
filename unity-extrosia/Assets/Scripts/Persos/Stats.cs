@@ -6,11 +6,11 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
 
-    public int maxHealth;
-    public int maxMana;
+    public float maxHealth;
+    public float maxMana;
     
-    public int currentHealth;
-    public int currentMana;
+    public float currentHealth;
+    public float currentMana;
     
     public int currentFinalObjects;
     
@@ -63,6 +63,16 @@ public class Stats : MonoBehaviour
             Debug.Log("You have all the items");
         }
 
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += 0.015f;
+        }
+        if (currentMana < maxMana)
+        {
+            currentMana += 0.015f;
+        }
+        
+        
 
         if (!isAlive)
         {
