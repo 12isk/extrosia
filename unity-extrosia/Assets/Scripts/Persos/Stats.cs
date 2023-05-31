@@ -25,6 +25,8 @@ public class Stats : MonoBehaviourPunCallbacks
     public ManaBar manaBar;
     public bool canAttack;
     public GameManagerScript gameManager;
+    public GameManagerScript gameManager1;
+    public bool WonDone;
     public Attack attack;
 
     // Start is called before the first frame update
@@ -36,6 +38,7 @@ public class Stats : MonoBehaviourPunCallbacks
         //todo: add max mana
         manaBar.SetMaxMana(maxMana);
         healthBar.SetMaxHealth(maxHealth);
+        WonDone = false;
 
     }
 
@@ -81,6 +84,13 @@ public class Stats : MonoBehaviourPunCallbacks
         if (hasWon && ismulti)
         {
             photonView.RPC("haslost", RpcTarget.Others);
+            gameManager1.gameOver();
+        }
+        
+        if (hasWon && !WonDone)
+        {
+            WonDone = true;
+            gameManager1.gameOver();
         }
 
 
