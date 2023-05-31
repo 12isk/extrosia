@@ -1144,6 +1144,7 @@ MonoBehaviour:
   agent: {fileID: 6493139185439275199}
   attackRange: 45
   stopChaseDistance: 100
+  targetRange: 50
   firepoint: {fileID: 6892513554981266236}
   projectile: {fileID: 7764351329508152084, guid: 3b8c8adbf1251e04b9305d51c5e1bc5b, type: 3}
   launchTime: 0
@@ -1151,6 +1152,9 @@ MonoBehaviour:
   health: 0
   maxHealth: 30
   healthBar: {fileID: 9165146844968498786}
+  ManaDrop: {fileID: 4941989552321852333, guid: 4ff69ea7241354249b75a4145b6b7690, type: 3}
+  HealthDrop: {fileID: 8076065162615655234, guid: 918fd8c1867697e4e874bb92a1a72d2c, type: 3}
+  ExpDrop: {fileID: 6470237457177503042, guid: 58fa9028db0060d4c973f5d4d77a7abc, type: 3}
 --- !u!114 &3544157284935523904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,7 +1162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5637869689354316245}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e2ca23e7eea9ff47828d7fcddd634ff, type: 3}
   m_Name: 

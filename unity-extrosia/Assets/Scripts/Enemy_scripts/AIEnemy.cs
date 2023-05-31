@@ -16,12 +16,18 @@ public class AIEnemy : MonoBehaviour
             GoingBackToStart,
         }
 
+    
+        
+        
+        //chasing
+        
         public Transform player;
         public NavMeshAgent agent;
         private Vector3 startingPosition;
         private Vector3 roamPosition;
         private State state;
         
+        //attacking
         public float attackRange = 30f;
         public float stopChaseDistance = 80f;
         public float targetRange = 50f;
@@ -37,7 +43,13 @@ public class AIEnemy : MonoBehaviour
         public float maxHealth;
         public HealthBar healthBar;
 
-        [CanBeNull]public Dropper dropper;
+        
+        //dropper 
+        
+        public Drops ManaDrop;
+        public Drops HealthDrop;
+        public Drops ExpDrop;
+        //[CanBeNull]public Dropper dropper;
         private void Awake()
         {
             state = State.Roaming;
@@ -138,35 +150,45 @@ public class AIEnemy : MonoBehaviour
         }
         
         
+        public void Destroying()
+        {
         
+            
+            Instantiate(ManaDrop, transform.position, Quaternion.identity);
+            Instantiate(HealthDrop, transform.position, Quaternion.identity);
+            Instantiate(ExpDrop, transform.position, Quaternion.identity);
+        
+        }
         private void TakeDamage(float damage)
-     {
-         health -= damage;
-         if (health <= 0)
+        {
+             health -= damage;
+             if (health <= 0)
+             {
+                 Destroy(this.gameObject);
+                 Destroying();
+             }
+        }
+        
+        private void OnDisable()
+        {
+            Destroy(this.gameObject);
+        }
+         private void OnCollisionEnter(Collision collision)
          {
-             dropper.Destroying();
+             
+             if (collision.gameObject.CompareTag("Bullet"))
+             {
+                 var bullet = collision.gameObject.GetComponent<Projectile>();
+                 float damage = bullet.damage;
+                 TakeDamage(damage);
+             }
+             
+             if (collision.gameObject.CompareTag("Enemy"))
+             {
+                 Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+             }
+             
          }
-     }
-    private void OnDisable()
-    {
-        Destroy(this);
-    }
-     private void OnCollisionEnter(Collision collision)
-     {
-         
-         if (collision.gameObject.CompareTag("Bullet"))
-         {
-             var bullet = collision.gameObject.GetComponent<Projectile>();
-             float damage = bullet.damage;
-             TakeDamage(damage);
-         }
-         
-         if (collision.gameObject.CompareTag("Enemy"))
-         {
-             Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
-         }
-         
-     }
         private void FindTarget()
         {
             Debug.Log("Finding");
@@ -178,6 +200,7 @@ public class AIEnemy : MonoBehaviour
                 state = State.ChaseTarget;
             }
         }
+        
         
              private void OnDrawGizmosSelected()
      {

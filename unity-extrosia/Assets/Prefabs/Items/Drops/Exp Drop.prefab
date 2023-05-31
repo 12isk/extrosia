@@ -9787,7 +9787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  amount: 10
+  amount: 25
 --- !u!1 &7731194408804046442
 GameObject:
   m_ObjectHideFlags: 0

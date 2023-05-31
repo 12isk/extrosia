@@ -90,7 +90,7 @@ public class Stats : MonoBehaviourPunCallbacks
         if (hasWon && !WonDone)
         {
             WonDone = true;
-            gameManager1.gameOver();
+            gameManager.gameOver();
         }
 
 
