@@ -105,7 +105,7 @@ public class BossEnemy : MonoBehaviour
          Gizmos.color = Color.yellow;
          Gizmos.DrawWireSphere(position, stopChaseDistance);
          Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(position, targetRange);
+         Gizmos.DrawWireSphere(position, targetRange);
 
      }
 }
