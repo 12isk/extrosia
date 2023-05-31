@@ -35,7 +35,8 @@ public class AIEnemy : MonoBehaviour
         public float health;
         public float maxHealth;
         public HealthBar healthBar;
-        
+
+        public Dropper dropper;
         private void Awake()
         {
             state = State.Roaming;
@@ -52,6 +53,7 @@ public class AIEnemy : MonoBehaviour
 
         private void Update()
         {
+
             
             healthBar.SetHealth(health);
             
@@ -141,7 +143,7 @@ public class AIEnemy : MonoBehaviour
          health -= damage;
          if (health <= 0)
          {
-             Destroy(gameObject);
+             dropper.Destroying('d');
          }
      }
      private void OnCollisionEnter(Collision collision)
