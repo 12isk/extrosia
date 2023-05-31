@@ -18,12 +18,13 @@ public class Stats : MonoBehaviourPunCallbacks
 
     public bool isAlive;
     public bool hasWon;
+    public static bool ismulti;
 
     public HealthBar healthBar;
 
     public ManaBar manaBar;
     public bool canAttack;
-
+    public GameManagerScript gameManager;
     public Attack attack;
 
     // Start is called before the first frame update
@@ -77,7 +78,7 @@ public class Stats : MonoBehaviourPunCallbacks
             currentMana += 0.025f;
         }
 
-        if (hasWon)
+        if (hasWon && ismulti)
         {
             photonView.RPC("haslost", RpcTarget.Others);
         }
@@ -86,6 +87,7 @@ public class Stats : MonoBehaviourPunCallbacks
 
         if (!isAlive)
         {
+            gameManager.gameOver();
             Debug.Log("You died");
         }
 
@@ -119,15 +121,16 @@ public class Stats : MonoBehaviourPunCallbacks
         }
 
     }
+    [PunRPC]
+    public void haslost()
+    {
+        gameManager.gameOver();
+    }
 }
 
 
 
 
-/* [PunRPC]
- public void haslost()
- {
+    
 
- }
-*/
 

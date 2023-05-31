@@ -14,6 +14,7 @@ public class Mainmenu : MonoBehaviour
    public void PlayMultiGame()
    {
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+      Stats.ismulti = true;
    }
    public void QuitGame()
    {
