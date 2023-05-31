@@ -25,27 +25,16 @@ public class Dropper : MonoBehaviour
     //     //Instantiate(explosion, transform.position, Quaternion.identity);
     // }
 
-     public void Destroying(char c)
+     public void Destroying()
     {
-        if (c == 'd')
-        {
-            Destroy(this);
-            if (this!.gameObject.scene.isLoaded) return;
-            
-            Instantiate(ManaDrop, transform.position, Quaternion.identity);
-            Instantiate(HealthDrop, transform.position, Quaternion.identity);
-            Instantiate(ExpDrop, transform.position, Quaternion.identity);
-        }
-
-        else
-        {
-            Destroy(this);
-        }
+        
+        Destroy(this);
+        Instantiate(ManaDrop, transform.position, Quaternion.identity);
+        Instantiate(HealthDrop, transform.position, Quaternion.identity);
+        Instantiate(ExpDrop, transform.position, Quaternion.identity);
+        
     }
-    private void OnDisable()
-    {
-        Destroying('c');
-    }
+    
 
     // Update is called once per frame
     void Update()

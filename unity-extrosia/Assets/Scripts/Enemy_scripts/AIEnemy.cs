@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
@@ -36,7 +37,7 @@ public class AIEnemy : MonoBehaviour
         public float maxHealth;
         public HealthBar healthBar;
 
-        public Dropper dropper;
+        [CanBeNull]public Dropper dropper;
         private void Awake()
         {
             state = State.Roaming;
@@ -143,9 +144,13 @@ public class AIEnemy : MonoBehaviour
          health -= damage;
          if (health <= 0)
          {
-             dropper.Destroying('d');
+             dropper.Destroying();
          }
      }
+    private void OnDisable()
+    {
+        Destroy(this);
+    }
      private void OnCollisionEnter(Collision collision)
      {
          

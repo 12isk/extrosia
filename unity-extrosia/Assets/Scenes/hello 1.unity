@@ -25215,7 +25215,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508714382}
-  m_LocalRotation: {x: 0.00070760236, y: 0.9890699, z: -0.14736953, w: 0.0047490695}
+  m_LocalRotation: {x: 0.00070760475, y: 0.9890699, z: -0.14736952, w: 0.0047490867}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33812,3 +33812,4 @@ MonoBehaviour:
   health: 0
   maxHealth: 30
   healthBar: {fileID: 884205663}
+  dropper: {fileID: 0}
